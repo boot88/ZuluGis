@@ -1,71 +1,64 @@
-# Getting Started with Create React App
+Zulugis Project
+Это веб-приложение, построенное на React, с использованием карт через библиотеку вроде Leaflet и всплывающих окон (popup).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Структура проекта
 
-## Available Scripts
+zulugis/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── MapComponent.css
+│   │   ├── MapComponent.js
+│   │   ├── Popup.css
+│   │   └── Popup.js
+│   ├── App.css
+│   ├── App.js
+│   ├── index.css
+│   └── index.js
+├── .env
+├── .gitignore
+├── package.json
+└── package-lock.json
 
-In the project directory, you can run:
 
-### `npm start`
+Предварительные требования
+Node.js (версия 14 или выше)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm (обычно устанавливается вместе с Node.js)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Установка и запуск
+Распакуйте архив с проектом в удобную директорию.
 
-### `npm test`
+Установите зависимости:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+npm install
+Запустите приложение в режиме разработки:
 
-### `npm run build`
+bash
+npm start
+Откройте браузер и перейдите по адресу:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+text
+http://localhost:3000
+Приложение автоматически перезагрузится при изменении исходного кода.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Доступные скрипты
+npm start — запуск в режиме разработки
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm run build — сборка проекта для продакшена
 
-### `npm run eject`
+npm test — запуск тестов
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm run eject — извлечение конфигурации (необратимо!)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Основные компоненты
+MapComponent — отвечает за отображение карты
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Popup — всплывающее окно с дополнительной информацией
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Конфигурация
+Файл .env может содержать переменные окружения (например, API-ключи для карт)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ZuluGis
+Основные стили находятся в src/App.css и src/index.css

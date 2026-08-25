@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "description": "Interactive GIS demonstration with Leaflet and optional WFS data",
+  "homepage": "/zulgis",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

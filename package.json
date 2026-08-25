@@ -1,22 +1,22 @@
 {
-  "name": "map-app",
-  "version": "1.0.0",
-  "description": "React app with Leaflet map and WMS/WFS services",
-  "main": "src/index.js",
+  "name": "zulugis-demo-lab",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Interactive GIS demonstration with Leaflet and optional WFS data",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --watchAll=false"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "leaflet": "^1.9.4",
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "typescript": "4.9.5"
   },
   "browserslist": {
     "production": [

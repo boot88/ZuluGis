@@ -1,15 +1,17 @@
-import React from 'react';
 import MapComponent from './components/MapComponent';
-import './App.css';
-
-
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-shell">
       <header className="app-header">
-        <h1>Карта с WMS/WFS сервисами</h1>
-        <p>Кликните на объект для просмотра атрибутов</p>
+        <div className="brand-mark" aria-hidden="true">Z</div>
+        <div className="brand-copy">
+          <div className="brand-line">
+            <h1>ZuluGIS Demo Lab</h1>
+            <span className="header-badge">интерактивный стенд</span>
+          </div>
+          <p>Объекты городской инфраструктуры, пространственный анализ и подключение WFS</p>
+        </div>
       </header>
       <main className="app-main">
         <MapComponent />

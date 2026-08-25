@@ -1,169 +1,82 @@
-# 🌍 Zulugis - Interactive Map Application
+# ZuluGIS Demo Lab
 
-A modern React-based web application for displaying interactive maps with customizable popups and advanced UI components.
+Интерактивный демонстрационный GIS-интерфейс на React, Leaflet и React Leaflet. Приложение работает как статический сайт и не требует постоянно запущенного Node.js: Node используется для разработки и создания production-сборки, а папку `build` может отдавать Apache.
 
-![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript)
-![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?logo=css3)
-![License](https://img.shields.io/badge/License-MIT-green)
+## Возможности
 
-## ✨ Features
+- 12 демонстрационных объектов городской инфраструктуры;
+- точки, линейные маршруты и полигональные территории;
+- категории, статусы и тематические стили объектов;
+- поиск по названию, адресу, коду и остальным атрибутам;
+- фильтры по категории, статусу и типу геометрии;
+- статистика по видимой выборке;
+- список объектов с переходом к выбранной геометрии;
+- подробная карточка и безопасный React-попап без вставки HTML-строк;
+- три базовые карты: OpenStreetMap, светлая CARTO и спутниковая Esri;
+- геолокация пользователя;
+- измерение расстояния между двумя точками;
+- экспорт текущей выборки в GeoJSON;
+- подключение публичного WFS-слоя;
+- адаптивная панель для компьютеров, планшетов и телефонов.
 
-- **🗺️ Interactive Maps** - Seamless map integration with smooth navigation
-- **💬 Custom Popups** - Elegant popup components with rich content support
-- **🎨 Modern UI** - Clean and responsive design with custom CSS styling
-- **⚡ Fast Performance** - Optimized React components for smooth user experience
-- **📱 Mobile Friendly** - Fully responsive design across all devices
+## Требования
 
-## 🚀 Quick Start
+- Node.js 18, 20 или 22;
+- npm 9 или новее;
+- для публикации — любой статический веб-сервер, например Apache.
 
-### Prerequisites
+## Установка и проверка
 
-- **Node.js** (version 14.0 or higher)
-- **npm** (version 6.0 or higher) or **yarn**
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/zulugis.git
-   cd zulugis
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   # Create .env file in root directory
-   # Add your API keys and configuration
-   REACT_APP_MAP_API_KEY=your_map_api_key_here
-   REACT_APP_API_BASE_URL=your_api_base_url
-   ```
-
-4. **Start the development server**
-   ```bash
-   npm start
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
-
-## 📁 Project Structure
-
-```
-zulugis/
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   ├── MapComponent.js    # Main map component
-│   │   ├── MapComponent.css   # Map styling
-│   │   ├── Popup.js          # Popup component
-│   │   └── Popup.css         # Popup styling
-│   ├── App.js                # Root component
-│   ├── App.css               # Main application styles
-│   ├── index.js              # Application entry point
-│   └── index.css             # Global styles
-├── .env                      # Environment variables
-├── .gitignore               # Git ignore rules
-├── package.json             # Dependencies and scripts
-└── README.md               # Project documentation
-```
-
-## 🛠️ Available Scripts
-
-- `npm start` - Runs the app in development mode
-- `npm run build` - Builds the app for production
-- `npm test` - Launches the test runner
-- `npm run eject` - **Note: this is a one-way operation!**
-
-## 🎯 Key Components
-
-### MapComponent
-The core map visualization component featuring:
-- Interactive zoom and pan controls
-- Custom marker placements
-- Event handling for user interactions
-- Responsive design patterns
-
-### Popup Component
-Elegant popup system with:
-- Smooth animations and transitions
-- Customizable content areas
-- Mobile-optimized touch interactions
-- Flexible positioning system
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `.env` file in the root directory with the following variables:
-
-```env
-REACT_APP_MAP_API_KEY=your_actual_map_api_key
-REACT_APP_API_URL=your_backend_api_url
-REACT_APP_ENVIRONMENT=development
-```
-
-### Styling Customization
-The application uses modular CSS for easy customization. Key style files:
-
-- `src/App.css` - Global application styles
-- `src/components/MapComponent.css` - Map-specific styling
-- `src/components/Popup.css` - Popup component styles
-
-## 🚀 Deployment
-
-### Build for Production
 ```bash
+git clone https://github.com/boot88/ZuluGis.git
+cd ZuluGis
+npm ci
+npm test
+npm start
+```
+
+Режим разработки будет доступен по адресу `http://localhost:3000`.
+
+## Production-сборка
+
+```bash
+npm ci
+npm test
 npm run build
 ```
 
-This creates a `build` folder with optimized production files ready for deployment.
+Готовые файлы находятся в `build`.
 
-### Deployment Platforms
-- **Netlify**: Connect your GitHub repository for automatic deployments
-- **Vercel**: Zero-configuration deployment for React apps
-- **AWS S3**: Static website hosting
-- **GitHub Pages**: Free hosting for public repositories
+Пример публикации в Apache:
 
-## 🤝 Contributing
+```bash
+sudo mkdir -p /var/www/zulugis
+sudo cp -a build/. /var/www/zulugis/
+sudo chown -R www-data:www-data /var/www/zulugis
+sudo systemctl reload apache2
+```
 
-We welcome contributions! Please follow these steps:
+`DocumentRoot` виртуального хоста должен указывать на `/var/www/zulugis`.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## Подключение WFS
 
-### Development Guidelines
-- Follow React best practices and hooks patterns
-- Maintain consistent code style with ESLint
-- Write meaningful commit messages
-- Test changes across different browsers
+В панели приложения можно указать URL WFS и полное имя слоя, например `workspace:layer`. Те же значения можно задать при сборке через `.env`:
 
-## 📝 License
+```env
+REACT_APP_WFS_URL=https://example.org/geoserver/workspace/wfs
+REACT_APP_WFS_TYPENAME=workspace:layer
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+WFS должен возвращать `GeoJSON FeatureCollection` и разрешать CORS для домена приложения. Для защищённого WFS нужен серверный proxy: переменные `REACT_APP_*` и весь JavaScript-бандл публичны, поэтому логины, пароли и токены в них хранить нельзя.
 
-## 🆘 Support
+## Данные демонстрации
 
-If you encounter any issues or have questions:
+Демо-набор находится в `src/data/demoData.js`. Все объекты имеют единый набор ключевых атрибутов: название, категория, статус, код, владелец, описание и дата обновления. Функции фильтрации и расчёта статистики покрыты тестами.
 
-1. Check the [Issues](https://github.com/your-username/zulugis/issues) page
-2. Create a new issue with detailed description
-3. Provide steps to reproduce if reporting a bug
+## Команды
 
-## 🙏 Acknowledgments
-
-- React team for the amazing framework
-- Map library providers (Leaflet/Google Maps/Mapbox)
-- Contributors and testers
-
----
-
-**Built with ❤️ using React and modern web technologies**
+```bash
+npm start      # сервер разработки
+npm test       # тесты без watch-режима
+npm run build  # production-сборка
+```
